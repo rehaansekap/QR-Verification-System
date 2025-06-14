@@ -53,4 +53,4 @@ Thumbs.db
 .tmp/
 temp/
 
-vercel.json
+# vercel.json
