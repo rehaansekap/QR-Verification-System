@@ -1,6 +1,6 @@
 # 🎯 QR Verification System
 
-Modern QR Code verification system built with React, Node.js, and Supabase.
+Modern QR Code verification system built with PERN Stack (PostgreSQL, ExpressJS, ReactJS + Vite, NodeJS).
 
 ## ✨ Features
 
