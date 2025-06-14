@@ -155,18 +155,6 @@ function Login() {
             </Link>
           </div>
         </form>
-
-        {/* Demo credentials */}
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h3 className="text-sm font-medium text-blue-800 mb-2">
-            Demo Credentials:
-          </h3>
-          <p className="text-sm text-blue-700">
-            Username: <span className="font-mono">admin</span>
-            <br />
-            Password: <span className="font-mono">admin123</span>
-          </p>
-        </div>
       </div>
     </div>
   );

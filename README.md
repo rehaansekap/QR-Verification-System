@@ -34,15 +34,6 @@ Modern QR Code verification system built with PERN Stack (PostgreSQL, ExpressJS,
 - Vercel (Frontend + Serverless Functions)
 - Supabase (Database & Storage)
 
-## 📱 Demo
-
-🔗 **Live Demo:** [https://your-demo-url.vercel.app](https://your-demo-url.vercel.app)
-
-### Demo Credentials:
-
-- **Username:** `demo`
-- **Password:** `demo123`
-
 ## 🚀 Local Development
 
 ### Prerequisites
