@@ -158,8 +158,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/rehaansekap)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/rehanseekap)
+- GitHub: [@rehaansekap](https://github.com/rehaansekap)
+- LinkedIn: [Raihan Syeka Pramukastie](https://linkedin.com/in/rehanseekap)
 
 ## 🙏 Acknowledgments
 
