@@ -132,15 +132,15 @@ SUPABASE_SERVICE_KEY=your_service_key
 
 ### Admin Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.jpeg)
 
 ### QR Scanner
 
-![Scanner](screenshots/scanner.png)
+![Scanner](screenshots/scanner.jpeg)
 
 ### Analytics
 
-![Analytics](screenshots/analytics.png)
+![Analytics](screenshots/analytics.jpeg)
 
 ## 🤝 Contributing
 
@@ -158,9 +158,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Portfolio: [yourportfolio.com](https://yourportfolio.com)
+- GitHub: [@yourusername](https://github.com/rehaansekap)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/rehanseekap)
 
 ## 🙏 Acknowledgments
 
