@@ -66,8 +66,12 @@ app.use('*', (req, res) => {
     res.status(404).json({ message: 'Route not found' })
 })
 
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`)
-    console.log(`📱 Environment: ${process.env.NODE_ENV}`)
-    console.log(`🗄️ Database: Connected to Supabase`)
-})
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running on http://localhost:${PORT}`)
+        console.log(`📱 Environment: ${process.env.NODE_ENV}`)
+        console.log(`🗄️ Database: Connected to Supabase`)
+    })
+}
+
+export default app
