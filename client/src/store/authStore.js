@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import authService from '../services/authService'
 
 const useAuthStore = create(
     persist(
@@ -31,19 +32,13 @@ const useAuthStore = create(
                 set({ loading: true, error: null })
 
                 try {
-                    const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/login`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(credentials),
-                    })
+                    const result = await authService.login(credentials)
 
-                    const data = await response.json()
-
-                    if (!response.ok) {
-                        throw new Error(data.message || 'Login failed')
+                    if (!result.success) {
+                        throw new Error(result.error || 'Login failed')
                     }
+
+                    const data = result.data
 
                     // Set user and token
                     set({
@@ -70,7 +65,12 @@ const useAuthStore = create(
                 }
             },
 
-            logout: () => {
+            logout: async () => {
+                try {
+                    await authService.logout()
+                } catch (e) {
+                    // Ignore logout failure
+                }
                 set({
                     user: null,
                     token: null,
@@ -93,20 +93,14 @@ const useAuthStore = create(
                 set({ loading: true })
 
                 try {
-                    const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/profile`, {
-                        headers: {
-                            'Authorization': `Bearer ${token}`,
-                        },
-                    })
+                    const result = await authService.getProfile()
 
-                    if (!response.ok) {
-                        throw new Error('Token invalid')
+                    if (!result.success) {
+                        throw new Error(result.error || 'Token invalid')
                     }
 
-                    const data = await response.json()
-
                     set({
-                        user: data.data.user,
+                        user: result.data.data.user,
                         token,
                         isAuthenticated: true,
                         loading: false,
