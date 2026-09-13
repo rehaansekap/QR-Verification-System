@@ -1,0 +1,27 @@
+name: Supabase Keep-Alive Ping
+
+on:
+  schedule:
+    # Berjalan setiap 3 hari pada pukul 00:00 UTC
+    - cron: '0 0 */3 * *'
+  workflow_dispatch: # Memungkinkan tombol "Run workflow" manual dari GitHub UI
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Database REST API
+        run: |
+          echo "Pinging Supabase to prevent project pause..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/users?select=count" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          
+          echo "Supabase Response Status: $HTTP_STATUS"
+          
+          if [ "$HTTP_STATUS" -eq 200 ] || [ "$HTTP_STATUS" -eq 206 ]; then
+            echo "✅ Supabase is active and ping succeeded!"
+          else
+            echo "⚠️ Unexpected status code: $HTTP_STATUS"
+          fi
